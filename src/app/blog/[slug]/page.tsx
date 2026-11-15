@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Suspense } from "react";
-import { ArrowLeft, ArrowUpRight, Clock3, GithubLogo } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Clock3 } from "lucide-react";
 import { GithubLogo as GithubBrand } from "@phosphor-icons/react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
