@@ -25,9 +25,7 @@ const skills = [
   { name: "Computer Vision", logo: null },
 ];
 const projects = [
-  { number: "01", category: "COMPUTER VISION / RESEARCH", title: "Nam Dok Mai Mango Classification", description: "An image-based deep learning project exploring the classification of sweet, not-sweet, and unripe Nam Dok Mai mangoes.", stack: ["Python", "YOLO", "Computer Vision"], href: "https://github.com/kasettakorn", icon: Cpu },
-  { number: "02", category: "FULL-STACK / EDUCATION", title: "ALKORNITHM Online Judge", description: "A programming practice platform with problem management, code submissions, and an automated judging workflow.", stack: ["React", "TypeScript", "Node.js", "MongoDB"], href: "https://github.com/kasettakorn/MCS-CU", icon: Code2 },
-  { number: "03", category: "PERSONAL / OPEN SOURCE", title: "ALKORNITHM", description: "A personal home for software projects, experiments, technical notes, and writing about technology.", stack: ["Next.js", "TypeScript", "Tailwind CSS", "Ghost CMS"], href: "https://github.com/kasettakorn/alkornithm-2026", icon: Terminal },
+  { number: "01", category: "FULL-STACK / EDUCATION", title: "ALKORNITHM Online Judge", description: "A programming practice platform with problem management, code submissions, and an automated judging workflow.", stack: ["React", "TypeScript", "Node.js", "MongoDB"], href: "https://github.com/kasettakorn/MCS-CU", icon: Code2 },
 ];
 
 export default function Home() {
@@ -79,10 +77,10 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-3">
                     <img src="/images/logos/kmutnb.svg" alt="KMUTNB mark" loading="lazy" className="size-10 shrink-0 object-contain" />
-                    <div><p><span className="text-terminal-accent">B.Sc.</span> Computer Science</p><p className="text-muted-foreground">KMUTNB · Second Class Honours</p></div>
+                    <div><p><span className="text-terminal-accent">B.Sc.</span> Computer Science</p><p className="text-muted-foreground">King Mongkut's University of Technology North Bangkok (KMUTNB)</p></div>
                   </div>
                 </div></div>
-                <div className="border-t border-border pt-4 text-muted-foreground"><span className="text-terminal-accent">❯</span> <span className="terminal-caret inline-block h-3.5 w-1.5 translate-y-[2px] bg-terminal-accent" /></div>
+                <div className="border-t border-border pt-4 text-muted-foreground"><span className="text-terminal-accent">❯</span> keep going for Ph.D.<span className="terminal-caret inline-block h-3.5 w-1.5 translate-y-[2px] bg-terminal-accent" /></div>
               </div>
             </div>
             <p className="mt-4 text-center font-mono text-[10px] tracking-widest text-muted-foreground">{"// MAY THE BUG BE WITH YOU."}</p>
