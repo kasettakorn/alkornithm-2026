@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Code2, Cpu, MapPin, Terminal } from "lucide-react";
+import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Terminal, UserRound } from "lucide-react";
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
@@ -83,7 +83,7 @@ export default function Home() {
 
       <section id="about" className="scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
-          <div><p className="section-kicker">01 / ABOUT</p><h2 className="section-heading mt-5">A little context<br />behind the code.</h2></div>
+          <div><p className="section-kicker inline-flex items-center gap-2"><UserRound size={13} aria-hidden="true" />01 / ABOUT</p><h2 className="section-heading mt-5">A little context<br />behind the code.</h2></div>
           <div><p className="max-w-3xl text-lg leading-8 text-muted-foreground">I enjoy turning complex problems into useful, well-crafted applications. My work spans frontend and backend development, with a growing interest in machine learning and computer vision.</p><div className="mt-9"><p className="mb-4 font-mono text-xs text-terminal-accent">$ tech-stack --list</p><div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
   {skills.map((skill) => (
     <div key={skill.name} className="group flex min-h-14 items-center gap-3 rounded-md border border-border bg-muted/30 px-3 py-2.5 transition-all hover:border-terminal-accent/60 hover:bg-muted/60">
@@ -101,7 +101,7 @@ export default function Home() {
 
       <section id="projects" className="scroll-mt-28 border-b border-border bg-muted/20">
         <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
-          <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="section-kicker">02 / SELECTED WORK</p><h2 className="section-heading mt-5">Projects in production.</h2></div><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-terminal-accent">ls -la github <ArrowUpRight size={14} /></a></div>
+          <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="section-kicker inline-flex items-center gap-2"><FolderKanban size={13} aria-hidden="true" />02 / SELECTED WORK</p><h2 className="section-heading mt-5">Projects in production.</h2></div><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-terminal-accent">ls -la github <ArrowUpRight size={14} /></a></div>
           <div className="grid gap-4 lg:grid-cols-3">
             {projects.map((project) => { const Icon = project.icon; return <article key={project.number} className="group flex min-h-[340px] flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/50 hover:shadow-xl hover:shadow-black/5"><div className="flex items-start justify-between"><span className="font-mono text-xs text-terminal-accent">{project.number} / 03</span><Icon size={19} className="text-muted-foreground transition-colors group-hover:text-terminal-accent" /></div><p className="mt-10 font-mono text-[9px] tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-3 text-xl font-semibold tracking-tight">{project.title}</h3><p className="mt-3 flex-1 text-sm leading-7 text-muted-foreground">{project.description}</p><div className="mt-6 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="font-mono text-[10px] text-muted-foreground">#{item.replaceAll(" ", "")}</span>)}</div><a href={project.href} target="_blank" rel="noreferrer" aria-label={project.title + " repository"} className="mt-7 inline-flex items-center gap-2 border-t border-border pt-4 font-mono text-xs text-foreground transition-colors group-hover:text-terminal-accent">view_repository <ArrowUpRight size={14} /></a></article>; })}
           </div>
@@ -110,7 +110,7 @@ export default function Home() {
 
       <section id="experience" className="scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
-          <div><p className="section-kicker">03 / EXPERIENCE</p><h2 className="section-heading mt-5">The path<br />so far.</h2></div>
+          <div><p className="section-kicker inline-flex items-center gap-2"><Briefcase size={13} aria-hidden="true" />03 / EXPERIENCE</p><h2 className="section-heading mt-5">The path<br />so far.</h2></div>
           <div className="border-t border-border">
             <article className="grid gap-3 border-b border-border py-7 sm:grid-cols-[1fr_auto]"><div><p className="mb-2 font-mono text-[10px] text-terminal-accent">CURRENT ROLE</p><h3 className="text-lg font-semibold">Full Stack Developer · AIS Team</h3><p className="mt-1 text-sm text-muted-foreground">Cube SoftTech Co., Ltd.</p></div><p className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</p></article>
             <article className="grid gap-3 border-b border-border py-7 sm:grid-cols-[1fr_auto]"><div><p className="mb-2 font-mono text-[10px] text-terminal-accent">CO-OPERATIVE EDUCATION</p><h3 className="text-lg font-semibold">SCG Chemicals Co., Ltd.</h3><p className="mt-2 max-w-xl text-sm leading-7 text-muted-foreground">Developed a Health Surveillance Tracking System (Return to Work), recognized with a project gold medal.</p></div><p className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</p></article>
@@ -120,7 +120,7 @@ export default function Home() {
 
       <section id="publications" className="scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
-          <div><p className="section-kicker">04 / PUBLICATIONS</p><h2 className="section-heading mt-5">Research &amp;<br />publications.</h2></div>
+          <div><p className="section-kicker inline-flex items-center gap-2"><BookOpen size={13} aria-hidden="true" />04 / PUBLICATIONS</p><h2 className="section-heading mt-5">Research &amp;<br />publications.</h2></div>
           <div className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-terminal-accent/50 sm:p-8">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded border border-terminal-accent/30 bg-terminal-accent/10 px-2 py-1 font-mono text-[10px] text-terminal-accent">IEEE XPLORE</span>
@@ -133,10 +133,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-muted/20"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker">05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border px-4 py-3 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
+      <section className="border-b border-border bg-muted/20"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border px-4 py-3 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
 
       <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-5 py-28 sm:px-8 lg:py-32">
-        <p className="section-kicker">06 / GET IN TOUCH</p>
+        <p className="section-kicker inline-flex items-center gap-2"><Mail size={13} aria-hidden="true" />06 / GET IN TOUCH</p>
         <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.05em] sm:text-6xl">Have a good idea?<br /><span className="text-terminal-accent">Let’s build it.</span></h2><p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">I’m always interested in thoughtful projects, interesting engineering challenges, and conversations about technology.</p></div><div className="flex flex-wrap gap-3"><a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-terminal-accent px-5 py-3 font-mono text-xs font-semibold text-terminal-accent-foreground transition-transform hover:-translate-y-0.5"><LinkedinLogo size={14} /> connect --linkedin</a><a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><LinkedinLogo size={16} /></a><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><GithubLogo size={16} /></a></div></div>
       </section>
 
