@@ -97,7 +97,7 @@ export default function Home() {
   {skills.map((skill) => (
     <div key={skill.name} className="group flex min-h-14 items-center gap-3 rounded-md border border-border bg-muted/30 px-3 py-2.5 transition-all hover:border-terminal-accent/60 hover:bg-muted/60">
       {skill.logo ? (
-        <img src={"/images/logos/" + skill.logo + ".svg"} alt="" aria-hidden="true" loading="lazy" className="size-5 shrink-0 object-contain" />
+        <img src={"/images/logos/" + skill.logo + ".svg"} alt="" aria-hidden="true" loading="lazy" className={skill.logo === "nextdotjs" ? "size-5 shrink-0 object-contain dark:invert" : "size-5 shrink-0 object-contain"} />
       ) : (
         <Cpu size={20} aria-hidden="true" className="shrink-0 text-muted-foreground transition-colors group-hover:text-terminal-accent" />
       )}
