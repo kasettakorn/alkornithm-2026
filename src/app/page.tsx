@@ -1,3 +1,5 @@
+import { ThemeToggle } from "@/components/theme-toggle";
+
 const navigation = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
@@ -55,14 +57,17 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <a
-            href="https://github.com/kasettakorn"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-border px-4 py-2 text-xs font-medium transition-colors hover:bg-muted"
-          >
-            GitHub ↗
-          </a>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a
+              href="https://github.com/kasettakorn"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border px-4 py-2 text-xs font-medium transition-colors hover:bg-muted"
+            >
+              GitHub ↗
+            </a>
+          </div>
         </nav>
       </header>
 
