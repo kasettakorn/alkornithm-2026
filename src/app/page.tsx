@@ -1,208 +1,107 @@
 import Link from "next/link";
+import { ArrowDown, ArrowUpRight, Code2, Cpu, Github, Linkedin, Mail, MapPin, Terminal } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
 
 const navigation = [
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Experience", href: "/experience" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Writing", href: "/blog" },
+  { label: "Contact", href: "#contact" },
 ];
-
-const skills = [
-  "TypeScript", "JavaScript", "React", "Next.js", "Node.js",
-  "PHP", "Python", "Flutter", "Tailwind CSS", "Computer Vision",
-];
-
+const skills = ["TypeScript", "JavaScript", "React", "Next.js", "Node.js", "PHP", "Python", "Flutter", "Tailwind CSS", "Computer Vision"];
 const projects = [
-  {
-    number: "01",
-    type: "COMPUTER VISION · RESEARCH",
-    title: "Nam Dok Mai Mango Classification",
-    description:
-      "An image-based deep learning project exploring the classification of sweet, not-sweet, and unripe Nam Dok Mai mangoes.",
-    stack: ["Python", "YOLO", "Computer Vision"],
-    href: "https://github.com/kasettakorn",
-  },
-  {
-    number: "02",
-    type: "WEB DEVELOPMENT",
-    title: "ALKORNITHM Online Judge",
-    description:
-      "A programming practice platform with problem management, code submission, and an automated judging workflow.",
-    stack: ["React", "TypeScript", "Node.js", "MongoDB"],
-    href: "https://github.com/kasettakorn/MCS-CU",
-  },
-  {
-    number: "03",
-    type: "PERSONAL · OPEN SOURCE",
-    title: "ALKORNITHM",
-    description:
-      "A personal space for software projects, experiments, notes, and writing about technology.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Ghost CMS"],
-    href: "https://github.com/kasettakorn/alkornithm-2026",
-  },
+  { number: "01", category: "COMPUTER VISION / RESEARCH", title: "Nam Dok Mai Mango Classification", description: "An image-based deep learning project exploring the classification of sweet, not-sweet, and unripe Nam Dok Mai mangoes.", stack: ["Python", "YOLO", "Computer Vision"], href: "https://github.com/kasettakorn", icon: Cpu },
+  { number: "02", category: "FULL-STACK / EDUCATION", title: "ALKORNITHM Online Judge", description: "A programming practice platform with problem management, code submissions, and an automated judging workflow.", stack: ["React", "TypeScript", "Node.js", "MongoDB"], href: "https://github.com/kasettakorn/MCS-CU", icon: Code2 },
+  { number: "03", category: "PERSONAL / OPEN SOURCE", title: "ALKORNITHM", description: "A personal home for software projects, experiments, technical notes, and writing about technology.", stack: ["Next.js", "TypeScript", "Tailwind CSS", "Ghost CMS"], href: "https://github.com/kasettakorn/alkornithm-2026", icon: Terminal },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8" aria-label="Main navigation">
-          <a href="#" className="font-mono text-lg font-bold tracking-tight">
-            ALKORNITHM<span className="text-muted-foreground">.</span>
-          </a>
-          <div className="hidden items-center gap-8 md:flex">
-            {navigation.map((item) => (
-              <Link key={item.label} href={item.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                {item.label}
-              </Link>
-            ))}
+    <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4 sm:px-8 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center justify-between gap-4">
+            <Link href="/" className="font-mono text-lg font-bold tracking-tight">ALKORNITHM<span className="text-terminal-accent">.</span></Link>
+            <div className="flex items-center gap-3 md:hidden">
+              <ThemeToggle />
+              <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="inline-flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground hover:border-terminal-accent hover:text-terminal-accent"><Github size={16} /></a>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
+          <nav aria-label="Main navigation" className="flex items-center gap-5 overflow-x-auto pb-1 font-mono text-[11px] text-muted-foreground md:pb-0">
+            {navigation.map((item, index) => <Link key={item.label} href={item.href} className="shrink-0 transition-colors hover:text-terminal-accent"><span className="mr-1 text-terminal-accent/70">0{index + 1}.</span>{item.label}</Link>)}
+          </nav>
+          <div className="hidden items-center gap-3 md:flex">
             <ThemeToggle />
-            <a
-              href="https://github.com/kasettakorn"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-border px-4 py-2 text-xs font-medium transition-colors hover:bg-muted"
-            >
-              GitHub ↗
-            </a>
+            <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent"><Github size={14} /> GitHub <ArrowUpRight size={13} /></a>
           </div>
-        </nav>
+        </div>
       </header>
 
-      <section className="mx-auto flex min-h-[78vh] max-w-6xl flex-col justify-center px-6 py-24 lg:px-8">
-        <p className="mb-8 font-mono text-xs tracking-[0.24em] text-muted-foreground">
-          SOFTWARE DEVELOPER · TECHNOLOGY ENTHUSIAST
-        </p>
-        <h1 className="max-w-4xl text-5xl font-semibold leading-[1.08] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-8xl">
-          Building ideas
-          <br />
-          into <span className="text-muted-foreground">digital</span>
-          <br />
-          experiences<span className="text-muted-foreground">.</span>
-        </h1>
-        <div className="mt-10 flex max-w-2xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <p className="max-w-md text-base leading-7 text-muted-foreground">
-            I’m Ronnakorn — a full-stack developer interested in thoughtful
-            software, web technologies, and applied computer science.
-          </p>
-          <a href="#projects" className="inline-flex shrink-0 items-center gap-2 text-sm font-medium underline decoration-border underline-offset-8 transition-colors hover:decoration-foreground">
-            Explore my work <span aria-hidden="true">↘</span>
-          </a>
-        </div>
-        <div className="mt-20 flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-          <span>Based in Thailand</span>
-          <span>Full-stack development</span>
-          <span>Computer science</span>
-        </div>
-      </section>
-
-      <section id="about" className="border-y border-border bg-muted/30">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-          <div>
-            <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">01 / ABOUT</p>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Curious by nature.<br />Developer by craft.</h2>
-          </div>
-          <div>
-            <p className="text-lg leading-8 text-muted-foreground">
-              I enjoy turning complex problems into useful, well-crafted
-              applications. My work spans frontend and backend development,
-              with a growing interest in machine learning and computer vision.
-            </p>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              I hold a B.Sc. in Computer Science from King Mongkut’s University
-              of Technology North Bangkok and an M.Sc. in Computer Science from
-              Chulalongkorn University.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span key={skill} className="rounded-full border border-border px-3 py-2 font-mono text-xs text-muted-foreground">
-                  {skill}
-                </span>
-              ))}
+      <section className="terminal-grid relative border-b border-border">
+        <div className="mx-auto grid min-h-[calc(90vh-76px)] max-w-6xl items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-28">
+          <div className="relative z-10">
+            <p className="mb-7 flex items-center gap-2 font-mono text-xs tracking-wide text-muted-foreground"><span className="size-2 rounded-full bg-terminal-accent shadow-[0_0_12px_var(--terminal-accent)]" />~/alkornithm <span className="text-terminal-accent">$</span> whoami</p>
+            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-[-0.06em] sm:text-6xl md:text-7xl xl:text-[5.5rem]">I build software<br />that makes ideas<br /><span className="text-terminal-accent">work.</span><span className="terminal-caret ml-1 inline-block h-[0.78em] w-[3px] translate-y-1 bg-terminal-accent" /></h1>
+            <p className="mt-8 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">I’m Ronnakorn — a full-stack developer interested in thoughtful software, web technologies, and applied computer science.</p>
+            <div className="mt-9 flex flex-wrap items-center gap-5">
+              <Link href="#projects" className="inline-flex items-center gap-2 rounded-md bg-terminal-accent px-5 py-3 font-mono text-xs font-semibold text-terminal-accent-foreground transition-transform hover:-translate-y-0.5">./view-projects <ArrowUpRight size={15} /></Link>
+              <Link href="#contact" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-terminal-accent">./contact <ArrowDown size={14} /></Link>
             </div>
+            <div className="mt-14 flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"><span className="inline-flex items-center gap-2"><MapPin size={12} /> Bangkok, Thailand</span><span>Full-stack development</span><span>Computer vision</span></div>
           </div>
-        </div>
-      </section>
 
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
-        <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <div>
-            <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">02 / SELECTED WORK</p>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Things I’ve worked on.</h2>
-          </div>
-          <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            More on GitHub ↗
-          </a>
-        </div>
-        <div className="divide-y divide-border border-y border-border">
-          {projects.map((project) => (
-            <article key={project.number} className="group grid gap-6 py-8 md:grid-cols-[72px_1fr_auto] md:items-start">
-              <span className="font-mono text-sm text-muted-foreground">{project.number}</span>
-              <div>
-                <p className="font-mono text-[10px] tracking-[0.18em] text-muted-foreground">{project.type}</p>
-                <h3 className="mt-3 text-2xl font-medium tracking-tight">{project.title}</h3>
-                <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.stack.map((item) => (
-                    <span key={item} className="rounded-full bg-muted px-3 py-1.5 font-mono text-[11px] text-muted-foreground">{item}</span>
-                  ))}
-                </div>
+          <div className="relative mx-auto w-full max-w-[440px] lg:ml-auto">
+            <div className="absolute -inset-5 rounded-2xl border border-terminal-accent/10" />
+            <div className="relative overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/5">
+              <div className="flex items-center justify-between border-b border-border px-4 py-3"><div className="flex items-center gap-2"><span className="size-2.5 rounded-full bg-[#f87171]" /><span className="size-2.5 rounded-full bg-[#fbbf24]" /><span className="size-2.5 rounded-full bg-terminal-accent" /></div><span className="font-mono text-[10px] text-muted-foreground">profile.ts</span><Terminal size={14} className="text-muted-foreground" /></div>
+              <div className="space-y-6 p-5 font-mono text-xs leading-6 sm:p-7">
+                <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> whoami</p><p className="mt-1 pl-4 text-base font-semibold text-foreground">Ronnakorn Hompoa</p><p className="pl-4 text-muted-foreground">Software Developer</p></div>
+                <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> cat focus.txt</p><ul className="mt-2 space-y-1 pl-4 text-muted-foreground"><li><span className="mr-2 text-terminal-accent">+</span>Full-stack engineering</li><li><span className="mr-2 text-terminal-accent">+</span>Computer vision & AI</li><li><span className="mr-2 text-terminal-accent">+</span>Building useful products</li></ul></div>
+                <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> education --list</p><div className="mt-2 space-y-2 pl-4"><p><span className="text-terminal-accent">M.Sc.</span> Computer Science</p><p className="text-muted-foreground">Chulalongkorn University</p><p className="pt-1"><span className="text-terminal-accent">B.Sc.</span> Computer Science</p><p className="text-muted-foreground">KMUTNB · Second Class Honours</p></div></div>
+                <div className="border-t border-border pt-4 text-muted-foreground"><span className="text-terminal-accent">❯</span> <span className="terminal-caret inline-block h-3.5 w-1.5 translate-y-[2px] bg-terminal-accent" /></div>
               </div>
-              <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title}`} className="text-xl text-muted-foreground transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground">↗</a>
-            </article>
-          ))}
+            </div>
+            <p className="mt-4 text-center font-mono text-[10px] tracking-widest text-muted-foreground">// MAY THE BUG BE WITH YOU.</p>
+          </div>
         </div>
       </section>
 
-      <section id="experience" className="border-y border-border bg-muted/30">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-          <div>
-            <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">03 / EXPERIENCE</p>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Where I’ve been.</h2>
+      <section id="about" className="scroll-mt-28 border-b border-border">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
+          <div><p className="section-kicker">01 / ABOUT</p><h2 className="section-heading mt-5">A little context<br />behind the code.</h2></div>
+          <div><p className="max-w-3xl text-lg leading-8 text-muted-foreground">I enjoy turning complex problems into useful, well-crafted applications. My work spans frontend and backend development, with a growing interest in machine learning and computer vision.</p><div className="mt-9"><p className="mb-4 font-mono text-xs text-terminal-accent">$ tech-stack --list</p><div className="flex flex-wrap gap-2">{skills.map((skill) => <span key={skill} className="rounded-md border border-border bg-muted/40 px-3 py-2 font-mono text-[11px] text-muted-foreground transition-colors hover:border-terminal-accent/60 hover:text-terminal-accent">{skill}</span>)}</div></div></div>
+        </div>
+      </section>
+
+      <section id="projects" className="scroll-mt-28 border-b border-border bg-muted/20">
+        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
+          <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="section-kicker">02 / SELECTED WORK</p><h2 className="section-heading mt-5">Projects in production.</h2></div><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-terminal-accent">ls -la github <ArrowUpRight size={14} /></a></div>
+          <div className="grid gap-4 lg:grid-cols-3">
+            {projects.map((project) => { const Icon = project.icon; return <article key={project.number} className="group flex min-h-[340px] flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/50 hover:shadow-xl hover:shadow-black/5"><div className="flex items-start justify-between"><span className="font-mono text-xs text-terminal-accent">{project.number} / 03</span><Icon size={19} className="text-muted-foreground transition-colors group-hover:text-terminal-accent" /></div><p className="mt-10 font-mono text-[9px] tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-3 text-xl font-semibold tracking-tight">{project.title}</h3><p className="mt-3 flex-1 text-sm leading-7 text-muted-foreground">{project.description}</p><div className="mt-6 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="font-mono text-[10px] text-muted-foreground">#{item.replaceAll(" ", "")}</span>)}</div><a href={project.href} target="_blank" rel="noreferrer" aria-label={project.title + " repository"} className="mt-7 inline-flex items-center gap-2 border-t border-border pt-4 font-mono text-xs text-foreground transition-colors group-hover:text-terminal-accent">view_repository <ArrowUpRight size={14} /></a></article>; })}
           </div>
+        </div>
+      </section>
+
+      <section id="experience" className="scroll-mt-28 border-b border-border">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
+          <div><p className="section-kicker">03 / EXPERIENCE</p><h2 className="section-heading mt-5">The path<br />so far.</h2></div>
           <div className="border-t border-border">
-            <div className="grid gap-2 border-b border-border py-7 sm:grid-cols-[1fr_auto]">
-              <div>
-                <h3 className="text-xl font-medium">Full Stack Developer · AIS Team</h3>
-                <p className="mt-1 text-muted-foreground">Cube SoftTech Co., Ltd.</p>
-              </div>
-              <p className="font-mono text-xs text-muted-foreground">OCT 2022 — PRESENT</p>
-            </div>
-            <div className="grid gap-2 border-b border-border py-7 sm:grid-cols-[1fr_auto]">
-              <div>
-                <h3 className="text-xl font-medium">Co-operative Education</h3>
-                <p className="mt-1 text-muted-foreground">SCG Chemicals Co., Ltd.</p>
-                <p className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground">Developed a Health Surveillance Tracking System (Return to Work), awarded a project gold medal.</p>
-              </div>
-              <p className="font-mono text-xs text-muted-foreground">MAY — NOV 2019</p>
-            </div>
+            <article className="grid gap-3 border-b border-border py-7 sm:grid-cols-[1fr_auto]"><div><p className="mb-2 font-mono text-[10px] text-terminal-accent">CURRENT ROLE</p><h3 className="text-lg font-semibold">Full Stack Developer · AIS Team</h3><p className="mt-1 text-sm text-muted-foreground">Cube SoftTech Co., Ltd.</p></div><p className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</p></article>
+            <article className="grid gap-3 border-b border-border py-7 sm:grid-cols-[1fr_auto]"><div><p className="mb-2 font-mono text-[10px] text-terminal-accent">CO-OPERATIVE EDUCATION</p><h3 className="text-lg font-semibold">SCG Chemicals Co., Ltd.</h3><p className="mt-2 max-w-xl text-sm leading-7 text-muted-foreground">Developed a Health Surveillance Tracking System (Return to Work), recognized with a project gold medal.</p></div><p className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</p></article>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-28 lg:px-8">
-        <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">04 / GET IN TOUCH</p>
-        <h2 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-6xl">
-          Have an idea? <span className="text-muted-foreground">Let’s make it happen.</span>
-        </h2>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-80">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-muted">LinkedIn ↗</a>
-        </div>
+      <section className="border-b border-border bg-muted/20"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker">04 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border px-4 py-3 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
+
+      <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-5 py-28 sm:px-8 lg:py-32">
+        <p className="section-kicker">05 / GET IN TOUCH</p>
+        <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.05em] sm:text-6xl">Have a good idea?<br /><span className="text-terminal-accent">Let’s build it.</span></h2><p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">I’m always interested in thoughtful projects, interesting engineering challenges, and conversations about technology.</p></div><div className="flex flex-wrap gap-3"><a href="mailto:hello@alkornithm.com" className="inline-flex items-center gap-2 rounded-md bg-terminal-accent px-5 py-3 font-mono text-xs font-semibold text-terminal-accent-foreground transition-transform hover:-translate-y-0.5"><Mail size={14} /> Say hello</a><a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><Linkedin size={16} /></a><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><Github size={16} /></a></div></div>
       </section>
 
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
-          <span className="font-mono font-semibold tracking-tight text-foreground">ALKORNITHM.</span>
-          <span>May the bug be with you.</span>
-          <span>© <CurrentYear /> ALKORNITHM. Built with curiosity.</span>
-        </div>
-      </footer>
+      <footer className="border-t border-border"><div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-7 font-mono text-[10px] text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between"><Link href="/" className="font-bold tracking-tight text-foreground">ALKORNITHM<span className="text-terminal-accent">.</span></Link><span>May the bug be with you.</span><span>© <CurrentYear /> ALKORNITHM · Built with curiosity.</span></div></footer>
     </main>
   );
 }
