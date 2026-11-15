@@ -74,11 +74,11 @@ export default function Home() {
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> cat focus.txt</p><ul className="mt-2 space-y-1 pl-4 text-muted-foreground"><li><span className="mr-2 text-terminal-accent">+</span>Full-stack engineering</li><li><span className="mr-2 text-terminal-accent">+</span>Computer vision & AI</li><li><span className="mr-2 text-terminal-accent">+</span>Building useful products</li></ul></div>
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> education --list</p><div className="mt-3 space-y-3 pl-4">
                   <div className="flex items-center gap-3">
-                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_of_Chulalongkorn_University_(1988).svg" alt="Chulalongkorn University logo" loading="lazy" className="size-10 shrink-0 object-contain" />
+                    <img src="/images/logos/chulalongkorn.svg" alt="Chulalongkorn University mark" loading="lazy" className="size-10 shrink-0 object-contain" />
                     <div><p><span className="text-terminal-accent">M.Sc.</span> Computer Science</p><p className="text-muted-foreground">Chulalongkorn University</p></div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <img src="https://grad.admission.kmutnb.ac.th/Images/logo_kmutnb.png" alt="KMUTNB logo" loading="lazy" className="size-10 shrink-0 object-contain" />
+                    <img src="/images/logos/kmutnb.svg" alt="KMUTNB mark" loading="lazy" className="size-10 shrink-0 object-contain" />
                     <div><p><span className="text-terminal-accent">B.Sc.</span> Computer Science</p><p className="text-muted-foreground">KMUTNB · Second Class Honours</p></div>
                   </div>
                 </div></div>
@@ -97,7 +97,7 @@ export default function Home() {
   {skills.map((skill) => (
     <div key={skill.name} className="group flex min-h-14 items-center gap-3 rounded-md border border-border bg-muted/30 px-3 py-2.5 transition-all hover:border-terminal-accent/60 hover:bg-muted/60">
       {skill.logo ? (
-        <img src={"https://cdn.simpleicons.org/" + skill.logo} alt="" aria-hidden="true" loading="lazy" className="size-5 shrink-0 object-contain" />
+        <img src={"/images/logos/" + skill.logo + ".svg"} alt="" aria-hidden="true" loading="lazy" className="size-5 shrink-0 object-contain" />
       ) : (
         <Cpu size={20} aria-hidden="true" className="shrink-0 text-muted-foreground transition-colors group-hover:text-terminal-accent" />
       )}
@@ -124,7 +124,7 @@ export default function Home() {
             <div aria-hidden="true" className="absolute bottom-8 left-[19px] top-8 w-px bg-border" />
             <div className="space-y-8">
               <article className="relative pl-14">
-                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="https://www.cubesofttech.com/pages-front/img/logo/cubesofttech.png" alt="Cube SoftTech logo" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/cubesofttech.svg" alt="Cube SoftTech mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
                 <div className="border-b border-border pb-8">
                   <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CURRENT ROLE</span><span className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</span></div>
                   <h3 className="text-lg font-semibold">Full Stack Developer · AIS Team</h3>
@@ -132,7 +132,7 @@ export default function Home() {
                 </div>
               </article>
               <article className="relative pl-14">
-                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="https://scgchem-myhealth.scg.com/assets/media/logos/SCG_LOGO.png" alt="SCG Chemicals logo" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/scg.svg" alt="SCG mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
                 <div className="pb-2">
                   <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CO-OPERATIVE EDUCATION</span><span className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</span></div>
                   <h3 className="text-lg font-semibold">SCG Chemicals Co., Ltd.</h3>
