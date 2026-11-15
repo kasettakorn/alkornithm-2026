@@ -101,9 +101,35 @@ export default function Home() {
 
       <section id="projects" className="scroll-mt-28 border-b border-border bg-muted/20">
         <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
-          <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="section-kicker inline-flex items-center gap-2"><FolderKanban size={13} aria-hidden="true" />02 / SELECTED WORK</p><h2 className="section-heading mt-5">Projects in production.</h2></div><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-terminal-accent">ls -la github <ArrowUpRight size={14} /></a></div>
-          <div className="grid gap-4 lg:grid-cols-3">
-            {projects.map((project) => { const Icon = project.icon; return <article key={project.number} className="group flex min-h-[340px] flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/50 hover:shadow-xl hover:shadow-black/5"><div className="flex items-start justify-between"><span className="font-mono text-xs text-terminal-accent">{project.number} / 03</span><Icon size={19} className="text-muted-foreground transition-colors group-hover:text-terminal-accent" /></div><p className="mt-10 font-mono text-[9px] tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-3 text-xl font-semibold tracking-tight">{project.title}</h3><p className="mt-3 flex-1 text-sm leading-7 text-muted-foreground">{project.description}</p><div className="mt-6 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="font-mono text-[10px] text-muted-foreground">#{item.replaceAll(" ", "")}</span>)}</div><a href={project.href} target="_blank" rel="noreferrer" aria-label={project.title + " repository"} className="mt-7 inline-flex items-center gap-2 border-t border-border pt-4 font-mono text-xs text-foreground transition-colors group-hover:text-terminal-accent">view_repository <ArrowUpRight size={14} /></a></article>; })}
+          <div className="mb-14 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="section-kicker inline-flex items-center gap-2"><FolderKanban size={13} aria-hidden="true" />02 / SELECTED WORK</p>
+              <h2 className="section-heading mt-5">A timeline of things I’ve built.</h2>
+            </div>
+            <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-terminal-accent">ls -la github <ArrowUpRight size={14} /></a>
+          </div>
+          <div className="relative">
+            <div aria-hidden="true" className="absolute bottom-8 left-[19px] top-8 w-px bg-border sm:left-[27px]" />
+            <div className="space-y-6">
+              {projects.map((project) => {
+                const Icon = project.icon;
+                return (
+                  <article key={project.number} className="relative grid gap-4 pl-12 sm:grid-cols-[56px_1fr] sm:gap-7 sm:pl-0">
+                    <div className="absolute left-0 top-6 z-10 flex size-10 items-center justify-center rounded-full border border-terminal-accent/40 bg-background font-mono text-xs text-terminal-accent sm:static sm:size-14">{project.number}</div>
+                    <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-terminal-accent/50 hover:shadow-xl hover:shadow-black/5 sm:p-8">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <p className="font-mono text-[9px] tracking-[0.16em] text-terminal-accent">{project.category}</p>
+                        <Icon size={19} className="text-muted-foreground transition-colors group-hover:text-terminal-accent" />
+                      </div>
+                      <h3 className="mt-4 text-xl font-semibold tracking-tight sm:text-2xl">{project.title}</h3>
+                      <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">{project.description}</p>
+                      <div className="mt-5 flex flex-wrap gap-x-3 gap-y-2">{project.stack.map((item) => <span key={item} className="font-mono text-[10px] text-muted-foreground">#{item.replaceAll(" ", "")}</span>)}</div>
+                      <a href={project.href} target="_blank" rel="noreferrer" aria-label={project.title + " repository"} className="mt-6 inline-flex items-center gap-2 border-t border-border pt-4 font-mono text-xs text-foreground transition-colors group-hover:text-terminal-accent">view_repository <ArrowUpRight size={14} /></a>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
