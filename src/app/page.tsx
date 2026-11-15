@@ -11,7 +11,18 @@ const navigation = [
   { label: "Writing", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
-const skills = ["TypeScript", "JavaScript", "React", "Next.js", "Node.js", "PHP", "Python", "Flutter", "Tailwind CSS", "Computer Vision"];
+const skills = [
+  { name: "TypeScript", logo: "typescript" },
+  { name: "JavaScript", logo: "javascript" },
+  { name: "React", logo: "react" },
+  { name: "Next.js", logo: "nextdotjs" },
+  { name: "Node.js", logo: "nodedotjs" },
+  { name: "PHP", logo: "php" },
+  { name: "Python", logo: "python" },
+  { name: "Flutter", logo: "flutter" },
+  { name: "Tailwind CSS", logo: "tailwindcss" },
+  { name: "Computer Vision", logo: null },
+];
 const projects = [
   { number: "01", category: "COMPUTER VISION / RESEARCH", title: "Nam Dok Mai Mango Classification", description: "An image-based deep learning project exploring the classification of sweet, not-sweet, and unripe Nam Dok Mai mangoes.", stack: ["Python", "YOLO", "Computer Vision"], href: "https://github.com/kasettakorn", icon: Cpu },
   { number: "02", category: "FULL-STACK / EDUCATION", title: "ALKORNITHM Online Judge", description: "A programming practice platform with problem management, code submissions, and an automated judging workflow.", stack: ["React", "TypeScript", "Node.js", "MongoDB"], href: "https://github.com/kasettakorn/MCS-CU", icon: Code2 },
@@ -72,7 +83,18 @@ export default function Home() {
       <section id="about" className="scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
           <div><p className="section-kicker">01 / ABOUT</p><h2 className="section-heading mt-5">A little context<br />behind the code.</h2></div>
-          <div><p className="max-w-3xl text-lg leading-8 text-muted-foreground">I enjoy turning complex problems into useful, well-crafted applications. My work spans frontend and backend development, with a growing interest in machine learning and computer vision.</p><div className="mt-9"><p className="mb-4 font-mono text-xs text-terminal-accent">$ tech-stack --list</p><div className="flex flex-wrap gap-2">{skills.map((skill) => <span key={skill} className="rounded-md border border-border bg-muted/40 px-3 py-2 font-mono text-[11px] text-muted-foreground transition-colors hover:border-terminal-accent/60 hover:text-terminal-accent">{skill}</span>)}</div></div></div>
+          <div><p className="max-w-3xl text-lg leading-8 text-muted-foreground">I enjoy turning complex problems into useful, well-crafted applications. My work spans frontend and backend development, with a growing interest in machine learning and computer vision.</p><div className="mt-9"><p className="mb-4 font-mono text-xs text-terminal-accent">$ tech-stack --list</p><div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+  {skills.map((skill) => (
+    <div key={skill.name} className="group flex min-h-14 items-center gap-3 rounded-md border border-border bg-muted/30 px-3 py-2.5 transition-all hover:border-terminal-accent/60 hover:bg-muted/60">
+      {skill.logo ? (
+        <img src={"https://cdn.simpleicons.org/" + skill.logo} alt="" aria-hidden="true" loading="lazy" className="size-5 shrink-0 opacity-70 grayscale transition-all group-hover:opacity-100 group-hover:grayscale-0" />
+      ) : (
+        <Cpu size={20} aria-hidden="true" className="shrink-0 text-muted-foreground transition-colors group-hover:text-terminal-accent" />
+      )}
+      <span className="font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground">{skill.name}</span>
+    </div>
+  ))}
+</div></div></div>
         </div>
       </section>
 
