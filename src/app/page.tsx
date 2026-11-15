@@ -1,4 +1,5 @@
 import { ThemeToggle } from "@/components/theme-toggle";
+import { CurrentYear } from "@/components/layout/current-year";
 
 const navigation = [
   { label: "About", href: "#about" },
@@ -197,7 +198,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <span className="font-mono font-semibold tracking-tight text-foreground">ALKORNITHM.</span>
           <span>May the bug be with you.</span>
-          <span>© {new Date().getFullYear()} ALKORNITHM. Built with curiosity.</span>
+          <span>© <CurrentYear /> ALKORNITHM. Built with curiosity.</span>
         </div>
       </footer>
     </main>

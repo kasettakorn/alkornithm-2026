@@ -12,6 +12,19 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "alkornithm.ghost.io",
+      },
+      {
+        protocol: "https",
+        hostname: "static.ghost.org",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
+
