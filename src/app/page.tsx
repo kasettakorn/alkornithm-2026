@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
 
 const navigation = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
+  { label: "Blog", href: "/blog" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
@@ -53,9 +55,9 @@ export default function Home() {
           </a>
           <div className="hidden items-center gap-8 md:flex">
             {navigation.map((item) => (
-              <a key={item.label} href={item.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              <Link key={item.label} href={item.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="flex items-center gap-3">
