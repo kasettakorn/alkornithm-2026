@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Code2, Cpu, MapPin, Terminal } from "lucide-react";
-import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
 
@@ -64,7 +64,7 @@ export default function Home() {
                 <div className="border-t border-border pt-4 text-muted-foreground"><span className="text-terminal-accent">❯</span> <span className="terminal-caret inline-block h-3.5 w-1.5 translate-y-[2px] bg-terminal-accent" /></div>
               </div>
             </div>
-            <p className="mt-4 text-center font-mono text-[10px] tracking-widest text-muted-foreground">// MAY THE BUG BE WITH YOU.</p>
+            <p className="mt-4 text-center font-mono text-[10px] tracking-widest text-muted-foreground">{"// MAY THE BUG BE WITH YOU."}</p>
           </div>
         </div>
       </section>
