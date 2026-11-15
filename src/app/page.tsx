@@ -72,11 +72,11 @@ export default function Home() {
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> cat focus.txt</p><ul className="mt-2 space-y-1 pl-4 text-muted-foreground"><li><span className="mr-2 text-terminal-accent">+</span>Full-stack engineering</li><li><span className="mr-2 text-terminal-accent">+</span>Computer vision & AI</li><li><span className="mr-2 text-terminal-accent">+</span>Building useful products</li></ul></div>
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> education --list</p><div className="mt-3 space-y-3 pl-4">
                   <div className="flex items-center gap-3">
-                    <img src="/images/logos/chulalongkorn.svg" alt="Chulalongkorn University mark" loading="lazy" className="size-10 shrink-0 object-contain" />
+                    <img src="/images/logos/chula.svg" alt="Chulalongkorn University mark" loading="lazy" className="size-10 shrink-0 object-contain" />
                     <div><p><span className="text-terminal-accent">M.Sc.</span> Computer Science</p><p className="text-muted-foreground">Chulalongkorn University</p></div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <img src="/images/logos/kmutnb.svg" alt="KMUTNB mark" loading="lazy" className="size-10 shrink-0 object-contain" />
+                    <img src="/images/logos/kmutnb.png" alt="KMUTNB mark" loading="lazy" className="size-10 shrink-0 object-contain" />
                     <div><p><span className="text-terminal-accent">B.Sc.</span> Computer Science</p><p className="text-muted-foreground">King Mongkut's University of Technology North Bangkok (KMUTNB)</p></div>
                   </div>
                 </div></div>
@@ -92,17 +92,17 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
           <div><p className="section-kicker inline-flex items-center gap-2"><UserRound size={13} aria-hidden="true" />01 / ABOUT</p><h2 className="section-heading mt-5">A little context<br />behind the code.</h2></div>
           <div><p className="max-w-3xl text-lg leading-8 text-muted-foreground">I enjoy turning complex problems into useful, well-crafted applications. My work spans frontend and backend development, with a growing interest in machine learning and computer vision.</p><div className="mt-9"><p className="mb-4 font-mono text-xs text-terminal-accent">$ tech-stack --list</p><div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-  {skills.map((skill) => (
-    <div key={skill.name} className="group flex min-h-14 items-center gap-3 rounded-md border border-border bg-muted/30 px-3 py-2.5 transition-all hover:border-terminal-accent/60 hover:bg-muted/60">
-      {skill.logo ? (
-        <img src={"/images/logos/" + skill.logo + ".svg"} alt="" aria-hidden="true" loading="lazy" className={skill.logo === "nextdotjs" ? "size-5 shrink-0 object-contain dark:invert" : "size-5 shrink-0 object-contain"} />
-      ) : (
-        <Cpu size={20} aria-hidden="true" className="shrink-0 text-muted-foreground transition-colors group-hover:text-terminal-accent" />
-      )}
-      <span className="font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground">{skill.name}</span>
-    </div>
-  ))}
-</div></div></div>
+            {skills.map((skill) => (
+              <div key={skill.name} className="group flex min-h-14 items-center gap-3 rounded-md border border-border bg-muted/30 px-3 py-2.5 transition-all hover:border-terminal-accent/60 hover:bg-muted/60">
+                {skill.logo ? (
+                  <img src={"/images/logos/" + skill.logo + ".svg"} alt="" aria-hidden="true" loading="lazy" className={skill.logo === "nextdotjs" ? "size-5 shrink-0 object-contain dark:invert" : "size-5 shrink-0 object-contain"} />
+                ) : (
+                  <Cpu size={20} aria-hidden="true" className="shrink-0 text-muted-foreground transition-colors group-hover:text-terminal-accent" />
+                )}
+                <span className="font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground">{skill.name}</span>
+              </div>
+            ))}
+          </div></div></div>
         </div>
       </section>
 
@@ -122,7 +122,7 @@ export default function Home() {
             <div aria-hidden="true" className="absolute bottom-8 left-[19px] top-8 w-px bg-border" />
             <div className="space-y-8">
               <article className="relative pl-14">
-                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/cubesofttech.svg" alt="Cube SoftTech mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/cubesofttech.png" alt="Cube SoftTech mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
                 <div className="border-b border-border pb-8">
                   <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CURRENT ROLE</span><span className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</span></div>
                   <h3 className="text-lg font-semibold">Full Stack Developer · AIS Team</h3>
@@ -130,7 +130,7 @@ export default function Home() {
                 </div>
               </article>
               <article className="relative pl-14">
-                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/scg.svg" alt="SCG mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/scg.png" alt="SCG mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
                 <div className="pb-2">
                   <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CO-OPERATIVE EDUCATION</span><span className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</span></div>
                   <h3 className="text-lg font-semibold">SCG Chemicals Co., Ltd.</h3>
