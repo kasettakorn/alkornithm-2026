@@ -176,7 +176,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
                 <div className="flex items-center gap-3">
-                  <span className="flex size-12 items-center justify-center rounded-xl bg-[#ff0033] shadow-lg shadow-red-950/40"><Youtube size={25} weight="fill" aria-hidden="true" /></span>
+                  <span className="flex size-12 items-center justify-center rounded-xl bg-[#ff0033] shadow-lg shadow-red-950/40"><Youtube size={25} aria-hidden="true" /></span>
                   <div>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">The official channel</p>
                     <p className="mt-1 text-sm font-semibold tracking-wide text-white">ALKORNITHM <span className="font-normal text-white/40">/ @alkornithm</span></p>
