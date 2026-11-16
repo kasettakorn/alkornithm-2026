@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Terminal, UserRound, Youtube } from "lucide-react";
+import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Play, Sparkles, Terminal, UserRound, Youtube } from "lucide-react";
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
@@ -160,25 +160,64 @@ export default function Home() {
 
       <section className="border-b border-border bg-muted/20"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border px-4 py-3 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
 
-      <section id="youtube" className="scroll-mt-28 border-b border-border">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:py-28">
-          <div>
-            <p className="section-kicker inline-flex items-center gap-2"><Youtube size={13} aria-hidden="true" />06 / YOUTUBE</p>
-            <h2 className="section-heading mt-5">More than code.<br />A channel for ideas.</h2>
+      <section id="youtube" className="scroll-mt-28 overflow-hidden border-b border-border bg-muted/20">
+        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <p className="section-kicker inline-flex items-center gap-2"><Youtube size={13} aria-hidden="true" />06 / BEYOND THE CODE</p>
+              <h2 className="section-heading mt-5">Press play.<br />Explore ALKORNITHM.</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-7 text-muted-foreground">A little more of what I create, learn, and share — beyond the screen of an editor.</p>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-terminal-accent/50 sm:p-8">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="flex size-12 items-center justify-center rounded-lg border border-terminal-accent/30 bg-terminal-accent/10 text-terminal-accent"><Youtube size={23} aria-hidden="true" /></div>
-                <div>
-                  <h3 className="text-xl font-semibold tracking-tight">ALKORNITHM</h3>
-                  <p className="mt-1 font-mono text-xs text-muted-foreground">@alkornithm</p>
+
+          <div className="group relative isolate overflow-hidden rounded-2xl border border-white/10 bg-[#101014] text-white shadow-2xl shadow-black/10">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-36 -z-10 size-[28rem] rounded-full bg-red-600/25 blur-[100px] transition-opacity duration-700 group-hover:opacity-90" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/4 -z-10 size-[24rem] rounded-full bg-orange-500/10 blur-[100px]" />
+            <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-12 items-center justify-center rounded-xl bg-[#ff0033] shadow-lg shadow-red-950/40"><Youtube size={25} weight="fill" aria-hidden="true" /></span>
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">The official channel</p>
+                    <p className="mt-1 text-sm font-semibold tracking-wide text-white">ALKORNITHM <span className="font-normal text-white/40">/ @alkornithm</span></p>
+                  </div>
+                </div>
+
+                <h3 className="mt-10 max-w-lg text-4xl font-semibold leading-[1.05] tracking-[-0.055em] sm:text-5xl">Ideas are better<br />when <span className="text-[#ff526f]">shared.</span></h3>
+                <p className="mt-5 max-w-md text-sm leading-7 text-white/60">Welcome to my corner of YouTube. Join me for videos, experiments, and stories from the world of ALKORNITHM.</p>
+
+                <div className="mt-9 flex flex-wrap items-center gap-4">
+                  <a href="https://www.youtube.com/@alkornithm" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-[#ff0033] px-5 py-3.5 font-mono text-xs font-semibold text-white shadow-lg shadow-red-950/30 transition-all hover:-translate-y-1 hover:bg-[#e6002e] hover:shadow-xl"> <Play size={14} fill="currentColor" /> EXPLORE CHANNEL <ArrowUpRight size={14} /></a>
+                  <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-white/40"><Sparkles size={13} /> Create · Learn · Share</span>
                 </div>
               </div>
-              <span className="rounded border border-border px-2 py-1 font-mono text-[10px] text-muted-foreground">YOUTUBE CHANNEL</span>
+
+              <a href="https://www.youtube.com/@alkornithm" target="_blank" rel="noreferrer" aria-label="Visit the ALKORNITHM YouTube channel" className="relative flex min-h-[280px] items-center justify-center overflow-hidden border-t border-white/10 p-6 sm:min-h-[360px] lg:border-l lg:border-t-0 lg:p-10">
+                <div aria-hidden="true" className="absolute inset-0 opacity-30" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)", backgroundSize: "34px 34px" }} />
+                <div className="absolute left-7 top-7 font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">/ channel_preview</div>
+                <div className="relative w-full max-w-[520px] rotate-[-2deg] transition-transform duration-700 group-hover:rotate-0 group-hover:scale-[1.02]">
+                  <div className="overflow-hidden rounded-xl border border-white/15 bg-[#19191f] shadow-2xl shadow-black/50">
+                    <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+                      <div className="flex items-center gap-2"><span className="size-2 rounded-full bg-[#ff526f]" /><span className="size-2 rounded-full bg-white/20" /><span className="size-2 rounded-full bg-white/20" /></div>
+                      <span className="font-mono text-[9px] tracking-widest text-white/40">ALKORNITHM.TV</span>
+                      <Youtube size={15} className="text-[#ff526f]" />
+                    </div>
+                    <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_70%_20%,rgba(255,0,51,.35),transparent_45%),linear-gradient(135deg,#28202a_0%,#121218_55%,#35121d_100%)]">
+                      <div aria-hidden="true" className="absolute -right-8 -top-12 size-56 rounded-full border border-white/10" />
+                      <div aria-hidden="true" className="absolute -right-2 -top-6 size-44 rounded-full border border-white/10" />
+                      <div aria-hidden="true" className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className="relative flex size-20 items-center justify-center rounded-full border border-white/30 bg-[#ff0033] text-white shadow-[0_0_60px_rgba(255,0,51,0.45)] transition-transform duration-300 group-hover:scale-110 sm:size-24"><Play size={31} fill="currentColor" className="ml-1" /></div>
+                      <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+                        <div><p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/50">Welcome to</p><p className="mt-1 text-xl font-bold tracking-tight sm:text-2xl">ALKORNITHM<span className="text-[#ff526f]">.</span></p></div>
+                        <span className="rounded border border-white/20 bg-black/20 px-2 py-1 font-mono text-[9px] text-white/70">PLAY ▶</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between px-4 py-3"><span className="font-mono text-[10px] text-white/65">@alkornithm</span><span className="font-mono text-[9px] text-white/35">YOUTUBE CHANNEL</span></div>
+                  </div>
+                </div>
+                <span className="absolute bottom-6 right-7 font-mono text-[9px] tracking-widest text-white/30">CLICK TO VISIT ↗</span>
+              </a>
             </div>
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-muted-foreground">Explore my YouTube channel for more from ALKORNITHM — alongside the projects, experiments, and ideas shared here.</p>
-            <a href="https://www.youtube.com/@alkornithm" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-md bg-terminal-accent px-4 py-3 font-mono text-xs font-semibold text-terminal-accent-foreground transition-transform hover:-translate-y-0.5">visit_channel <ArrowUpRight size={14} /></a>
           </div>
         </div>
       </section>
