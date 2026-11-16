@@ -72,7 +72,7 @@ export default function Home() {
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> cat focus.txt</p><ul className="mt-2 space-y-1 pl-4 text-muted-foreground"><li><span className="mr-2 text-terminal-accent">+</span>Full-stack engineering</li><li><span className="mr-2 text-terminal-accent">+</span>Computer vision & AI</li><li><span className="mr-2 text-terminal-accent">+</span>Building useful products</li></ul></div>
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> education --list</p><div className="mt-3 space-y-3 pl-4">
                   <div className="flex items-center gap-3">
-                    <img src="/images/logos/chula.svg" alt="Chulalongkorn University mark" loading="lazy" className="size-10 shrink-0 object-contain" />
+                    <img src="/images/logos/chula.png" alt="Chulalongkorn University mark" loading="lazy" className="size-10 shrink-0 object-contain" />
                     <div><p><span className="text-terminal-accent">M.Sc.</span> Computer Science</p><p className="text-muted-foreground">Chulalongkorn University</p></div>
                   </div>
                   <div className="flex items-center gap-3">
