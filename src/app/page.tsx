@@ -8,9 +8,9 @@ const navigation = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Publications", href: "#publications" },
-  { label: "Writing", href: "/blog" },
   { label: "YouTube", href: "#youtube" },
+  { label: "Writing", href: "/blog" },
+  { label: "Publications", href: "#publications" },
   { label: "Contact", href: "#contact" },
 ];
 const skills = [
@@ -143,28 +143,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="publications" className="scroll-mt-28 border-b border-border">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
-          <div><p className="section-kicker inline-flex items-center gap-2"><BookOpen size={13} aria-hidden="true" />04 / PUBLICATIONS</p><h2 className="section-heading mt-5">Research &amp;<br />publications.</h2></div>
-          <div className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-terminal-accent/50 sm:p-8">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded border border-terminal-accent/30 bg-terminal-accent/10 px-2 py-1 font-mono text-[10px] text-terminal-accent">IEEE XPLORE</span>
-              <span className="font-mono text-[10px] text-muted-foreground">RESEARCH PUBLICATION</span>
-            </div>
-            <h3 className="mt-5 text-xl font-semibold leading-snug tracking-tight sm:text-2xl">Image-Based Classification of Sweet and Not-Sweet Mangoes Using a Deep Learning Model</h3>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">Research on image-based deep learning for classifying Nam Dok Mai mango sweetness. Explore the published paper and its bibliographic details on IEEE Xplore.</p>
-            <a href="https://ieeexplore.ieee.org/document/11101023/" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border-t border-border pt-4 font-mono text-xs text-foreground transition-colors hover:text-terminal-accent">view_publication <ArrowUpRight size={14} /></a>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border bg-muted/20"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border px-4 py-3 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
-
       <section id="youtube" className="scroll-mt-28 overflow-hidden border-b border-border bg-muted/20">
         <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
             <div>
-              <p className="section-kicker inline-flex items-center gap-2"><Youtube size={13} aria-hidden="true" />06 / BEYOND THE CODE</p>
+              <p className="section-kicker inline-flex items-center gap-2"><Youtube size={13} aria-hidden="true" />04 / BEYOND THE CODE</p>
               <h2 className="section-heading mt-5">Press play.<br />Explore ALKORNITHM.</h2>
             </div>
             <p className="max-w-sm text-sm leading-7 text-muted-foreground">A little more of what I create, learn, and share — beyond the screen of an editor.</p>
@@ -218,6 +201,23 @@ export default function Home() {
                 <span className="absolute bottom-6 right-7 font-mono text-[9px] tracking-widest text-white/30">CLICK TO VISIT ↗</span>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-muted/20"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border px-4 py-3 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
+
+      <section id="publications" className="scroll-mt-28 border-b border-border">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
+          <div><p className="section-kicker inline-flex items-center gap-2"><BookOpen size={13} aria-hidden="true" />06 / PUBLICATIONS</p><h2 className="section-heading mt-5">Research &amp;<br />publications.</h2></div>
+          <div className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-terminal-accent/50 sm:p-8">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded border border-terminal-accent/30 bg-terminal-accent/10 px-2 py-1 font-mono text-[10px] text-terminal-accent">IEEE XPLORE</span>
+              <span className="font-mono text-[10px] text-muted-foreground">RESEARCH PUBLICATION</span>
+            </div>
+            <h3 className="mt-5 text-xl font-semibold leading-snug tracking-tight sm:text-2xl">Image-Based Classification of Sweet and Not-Sweet Mangoes Using a Deep Learning Model</h3>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">Research on image-based deep learning for classifying Nam Dok Mai mango sweetness. Explore the published paper and its bibliographic details on IEEE Xplore.</p>
+            <a href="https://ieeexplore.ieee.org/document/11101023/" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border-t border-border pt-4 font-mono text-xs text-foreground transition-colors hover:text-terminal-accent">view_publication <ArrowUpRight size={14} /></a>
           </div>
         </div>
       </section>
