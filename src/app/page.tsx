@@ -130,7 +130,7 @@ export default function Home() {
                   <p className="mt-1 text-sm text-muted-foreground">Cube SoftTech Co., Ltd.</p>
                 </div>
               </article>
-              <article className="relative pl-14">
+              <article className="group relative rounded-2xl border border-border bg-card p-5 pl-16 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6 sm:pl-16">
                 <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/scg.png" alt="SCG mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
                 <div className="pb-2">
                   <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CO-OPERATIVE EDUCATION</span><span className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</span></div>
