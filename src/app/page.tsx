@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Play, Sparkles, Terminal, UserRound, Youtube } from "lucide-react";
-import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
+import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Play, Sparkles, Terminal, UserRound } from "lucide-react";
+import { GithubLogo, LinkedinLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
 
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
             <div>
-              <p className="section-kicker inline-flex items-center gap-2"><Youtube size={13} aria-hidden="true" />04 / BEYOND THE CODE</p>
+              <p className="section-kicker inline-flex items-center gap-2"><YoutubeLogo size={13} aria-hidden="true" />04 / BEYOND THE CODE</p>
               <h2 className="section-heading mt-5">Press play.<br />Explore ALKORNITHM.</h2>
             </div>
             <p className="max-w-sm text-sm leading-7 text-muted-foreground">A little more of what I create, learn, and share — beyond the screen of an editor.</p>
@@ -159,7 +159,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
                 <div className="flex items-center gap-3">
-                  <span className="flex size-12 items-center justify-center rounded-xl bg-[#ff0033] shadow-lg shadow-red-950/40"><Youtube size={25} aria-hidden="true" /></span>
+                  <span className="flex size-12 items-center justify-center rounded-xl bg-[#ff0033] shadow-lg shadow-red-950/40"><YoutubeLogo size={25} aria-hidden="true" /></span>
                   <div>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">The official channel</p>
                     <p className="mt-1 text-sm font-semibold tracking-wide text-white">ALKORNITHM <span className="font-normal text-white/40">/ @alkornithm</span></p>
@@ -183,7 +183,7 @@ export default function Home() {
                     <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
                       <div className="flex items-center gap-2"><span className="size-2 rounded-full bg-[#ff526f]" /><span className="size-2 rounded-full bg-white/20" /><span className="size-2 rounded-full bg-white/20" /></div>
                       <span className="font-mono text-[9px] tracking-widest text-white/40">ALKORNITHM.TV</span>
-                      <Youtube size={15} className="text-[#ff526f]" />
+                      <YoutubeLogo size={15} className="text-[#ff526f]" />
                     </div>
                     <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_70%_20%,rgba(255,0,51,.35),transparent_45%),linear-gradient(135deg,#28202a_0%,#121218_55%,#35121d_100%)]">
                       <div aria-hidden="true" className="absolute -right-8 -top-12 size-56 rounded-full border border-white/10" />
