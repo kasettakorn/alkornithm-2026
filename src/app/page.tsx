@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="terminal-grid relative isolate border-b border-border">
+      <section className="showcase-section terminal-grid relative isolate border-b border-border">
         <div className="mx-auto grid min-h-[calc(90vh-76px)] max-w-6xl items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-28">
           <div className="relative z-10">
             <p className="mb-7 flex items-center gap-2 font-mono text-xs tracking-wide text-muted-foreground"><span className="size-2 rounded-full bg-terminal-accent shadow-[0_0_12px_var(--terminal-accent)]" />~/alkornithm <span className="text-terminal-accent">$</span> whoami</p>
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-28 border-b border-border bg-gradient-to-b from-muted/30 via-background to-background">
+      <section id="about" className="showcase-section scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
           <div className="lg:sticky lg:top-32 lg:self-start"><p className="section-kicker inline-flex items-center gap-2"><UserRound size={13} aria-hidden="true" />01 / ABOUT</p><h2 className="section-heading mt-5">A little context<br />behind the code.</h2><p className="mt-6 max-w-xs font-mono text-xs leading-6 text-muted-foreground">Curiosity-driven engineering<br /><span className="text-terminal-accent">{"// always learning, always building"}</span></p></div>
           <div><p className="max-w-3xl text-lg leading-8 text-muted-foreground">I enjoy turning complex problems into useful, well-crafted applications. My work spans frontend and backend development, with a growing interest in machine learning and computer vision.</p><div className="mt-9"><p className="mb-4 font-mono text-xs text-terminal-accent">$ tech-stack --list</p><div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="scroll-mt-28 border-b border-border bg-muted/20">
+      <section id="projects" className="showcase-section scroll-mt-28 border-b border-border">
         <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
           <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="section-kicker inline-flex items-center gap-2"><FolderKanban size={13} aria-hidden="true" />02 / SELECTED WORK</p><h2 className="section-heading mt-5">Projects in production.</h2><p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">A selection of ideas shaped into useful tools, experiments, and products.</p></div><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-terminal-accent">ls -la github <ArrowUpRight size={14} /></a></div>
           <div className="grid gap-4 lg:grid-cols-3">
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="scroll-mt-28 border-b border-border bg-muted/20">
+      <section id="experience" className="showcase-section scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
           <div><p className="section-kicker inline-flex items-center gap-2"><Briefcase size={13} aria-hidden="true" />03 / EXPERIENCE</p><h2 className="section-heading mt-5">The path<br />so far.</h2><p className="mt-5 max-w-xs text-sm leading-7 text-muted-foreground">The teams, projects, and opportunities that have shaped how I build software.</p></div>
           <div className="relative">
@@ -205,9 +205,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-gradient-to-br from-muted/50 via-muted/20 to-background"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 rounded-2xl border border-border bg-card/80 p-6 shadow-sm shadow-black/[0.03] sm:flex-row sm:items-center sm:justify-between sm:p-8"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-3.5 font-mono text-xs font-semibold text-background transition-all hover:-translate-y-0.5 hover:bg-terminal-accent hover:text-terminal-accent-foreground">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
+      <section id="writing" className="showcase-section border-b border-border"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 rounded-2xl border border-border bg-card/80 p-6 shadow-sm shadow-black/[0.03] sm:flex-row sm:items-center sm:justify-between sm:p-8"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-3.5 font-mono text-xs font-semibold text-background transition-all hover:-translate-y-0.5 hover:bg-terminal-accent hover:text-terminal-accent-foreground">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
 
-      <section id="publications" className="scroll-mt-28 border-b border-border">
+      <section id="publications" className="showcase-section scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
           <div><p className="section-kicker inline-flex items-center gap-2"><BookOpen size={13} aria-hidden="true" />06 / PUBLICATIONS</p><h2 className="section-heading mt-5">Research &amp;<br />publications.</h2></div>
           <div className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-lg shadow-black/[0.03] transition-all duration-500 hover:-translate-y-1 hover:border-terminal-accent/50 hover:shadow-xl sm:p-10"><div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 size-64 rounded-full bg-terminal-accent/5 blur-3xl transition-colors group-hover:bg-terminal-accent/10" />
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-28">
+      <section id="contact" className="showcase-section scroll-mt-28 border-b border-border">
         <p className="section-kicker inline-flex items-center gap-2"><Mail size={13} aria-hidden="true" />07 / GET IN TOUCH</p>
         <div className="relative mt-7 grid gap-10 overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-muted/70 via-card to-background p-7 shadow-xl shadow-black/[0.03] sm:p-10 lg:grid-cols-[1fr_auto] lg:items-end lg:p-14"><div><h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.05em] sm:text-6xl">Have a good idea?<br /><span className="text-terminal-accent">Let’s build it.</span></h2><p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">I’m always interested in thoughtful projects, interesting engineering challenges, and conversations about technology.</p></div><div className="flex flex-wrap gap-3"><a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-terminal-accent px-5 py-3 font-mono text-xs font-semibold text-terminal-accent-foreground transition-transform hover:-translate-y-0.5"><LinkedinLogo size={14} /> connect --linkedin</a><a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><LinkedinLogo size={16} /></a><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><GithubLogo size={16} /></a></div></div>
       </section>
