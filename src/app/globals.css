@@ -179,7 +179,8 @@
 }
 
 /* Premium showcase surfaces — shared visual language across the portfolio */
-.showcase-section {
+.showcase-section,
+.showcase-footer {
   --background: #101014;
   --foreground: #f8f8fa;
   --card: #19191f;
