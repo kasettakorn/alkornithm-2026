@@ -229,7 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-border bg-muted/20"><div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-7 font-mono text-[10px] text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between"><Link href="/" className="font-bold tracking-tight text-foreground">ALKORNITHM<span className="text-terminal-accent">.</span></Link><span>May the bug be with you.</span><span>© <CurrentYear /> ALKORNITHM · Built with curiosity.</span></div></footer>
+      <footer className="showcase-footer border-t border-border"><div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-7 font-mono text-[10px] text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between"><Link href="/" className="font-bold tracking-tight text-foreground">ALKORNITHM<span className="text-terminal-accent">.</span></Link><span>May the bug be with you.</span><span>© <CurrentYear /> ALKORNITHM · Built with curiosity.</span></div></footer>
     </main>
   );
 }
