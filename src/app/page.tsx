@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Terminal, UserRound } from "lucide-react";
+import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Terminal, UserRound, Youtube } from "lucide-react";
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
@@ -10,6 +10,7 @@ const navigation = [
   { label: "Experience", href: "#experience" },
   { label: "Publications", href: "#publications" },
   { label: "Writing", href: "/blog" },
+  { label: "YouTube", href: "#youtube" },
   { label: "Contact", href: "#contact" },
 ];
 const skills = [
@@ -159,8 +160,31 @@ export default function Home() {
 
       <section className="border-b border-border bg-muted/20"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border px-4 py-3 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
 
+      <section id="youtube" className="scroll-mt-28 border-b border-border">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:py-28">
+          <div>
+            <p className="section-kicker inline-flex items-center gap-2"><Youtube size={13} aria-hidden="true" />06 / YOUTUBE</p>
+            <h2 className="section-heading mt-5">More than code.<br />A channel for ideas.</h2>
+          </div>
+          <div className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-terminal-accent/50 sm:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="flex size-12 items-center justify-center rounded-lg border border-terminal-accent/30 bg-terminal-accent/10 text-terminal-accent"><Youtube size={23} aria-hidden="true" /></div>
+                <div>
+                  <h3 className="text-xl font-semibold tracking-tight">ALKORNITHM</h3>
+                  <p className="mt-1 font-mono text-xs text-muted-foreground">@alkornithm</p>
+                </div>
+              </div>
+              <span className="rounded border border-border px-2 py-1 font-mono text-[10px] text-muted-foreground">YOUTUBE CHANNEL</span>
+            </div>
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-muted-foreground">Explore my YouTube channel for more from ALKORNITHM — alongside the projects, experiments, and ideas shared here.</p>
+            <a href="https://www.youtube.com/@alkornithm" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-md bg-terminal-accent px-4 py-3 font-mono text-xs font-semibold text-terminal-accent-foreground transition-transform hover:-translate-y-0.5">visit_channel <ArrowUpRight size={14} /></a>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-5 py-28 sm:px-8 lg:py-32">
-        <p className="section-kicker inline-flex items-center gap-2"><Mail size={13} aria-hidden="true" />06 / GET IN TOUCH</p>
+        <p className="section-kicker inline-flex items-center gap-2"><Mail size={13} aria-hidden="true" />07 / GET IN TOUCH</p>
         <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.05em] sm:text-6xl">Have a good idea?<br /><span className="text-terminal-accent">Let’s build it.</span></h2><p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">I’m always interested in thoughtful projects, interesting engineering challenges, and conversations about technology.</p></div><div className="flex flex-wrap gap-3"><a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-terminal-accent px-5 py-3 font-mono text-xs font-semibold text-terminal-accent-foreground transition-transform hover:-translate-y-0.5"><LinkedinLogo size={14} /> connect --linkedin</a><a href="https://www.linkedin.com/in/ronnakorn-hompoa-5b45b9208/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><LinkedinLogo size={16} /></a><a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="inline-flex size-11 items-center justify-center rounded-md border border-border transition-colors hover:border-terminal-accent hover:text-terminal-accent"><GithubLogo size={16} /></a></div></div>
       </section>
 
