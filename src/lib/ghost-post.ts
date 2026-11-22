@@ -1,9 +1,9 @@
 
 import { ghost } from "@/lib/ghost";
 
-export async function getPosts() {
+export async function getPosts(limit = 20) {
     return ghost.posts.browse({
-        limit: 20,
+        limit,
         include: ["tags", "authors"],
         order: "published_at DESC",
     });

@@ -13,6 +13,7 @@ const ghostHtmlOptions = {
         ...sanitizeHtml.defaults.allowedTags,
         "figure",
         "figcaption",
+        "img",
         "iframe",
         "video",
         "source",
@@ -22,6 +23,7 @@ const ghostHtmlOptions = {
     allowedAttributes: {
         ...sanitizeHtml.defaults.allowedAttributes,
         "*": ["class"],
+        img: ["src", "srcset", "alt", "title", "width", "height", "loading"],
         iframe: ["src", "title", "allow", "allowfullscreen", "frameborder", "width", "height"],
         video: ["src", "controls", "width", "height", "poster"],
         source: ["src", "type"],

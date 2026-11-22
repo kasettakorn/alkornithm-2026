@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense } from "react";
 import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Play, Sparkles, Terminal, UserRound } from "lucide-react";
 import { GithubLogo, LinkedinLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 import { CurrentYear } from "@/components/layout/current-year";
 import { SiteHeader } from "@/components/layout/navbar";
+import { getPostPath, getPosts } from "@/lib/ghost-post";
 
 const skills = [
   { name: "TypeScript", logo: "typescript" },
@@ -202,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="writing" className="showcase-section border-b border-border"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="flex flex-col gap-5 rounded-2xl border border-border bg-card/80 p-6 shadow-sm shadow-black/[0.03] sm:flex-row sm:items-center sm:justify-between sm:p-8"><p className="max-w-lg text-sm leading-7 text-muted-foreground">Technical notes, experiments, research updates, and lessons learned while building things.</p><Link href="/blog" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-3.5 font-mono text-xs font-semibold text-background transition-all hover:-translate-y-0.5 hover:bg-terminal-accent hover:text-terminal-accent-foreground">cd /blog <ArrowUpRight size={14} /></Link></div></div></section>
+      <section id="writing" className="showcase-section border-b border-border"><div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:items-center"><div><p className="section-kicker inline-flex items-center gap-2"><NotebookPen size={13} aria-hidden="true" />05 / WRITING</p><h2 className="section-heading mt-5">Notes from the terminal.</h2></div><div className="space-y-4"><Suspense fallback={<div className="rounded-2xl border border-border bg-card/80 p-6 font-mono text-xs text-muted-foreground sm:p-8">Loading latest post...</div>}><LatestBlogPost /></Suspense><Link href="/blog" className="inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-3.5 font-mono text-xs font-semibold text-background transition-all hover:-translate-y-0.5 hover:bg-terminal-accent hover:text-terminal-accent-foreground">view_all_writing <ArrowUpRight size={14} /></Link></div></div></section>
 
       <section id="publications" className="showcase-section scroll-mt-28 border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
@@ -227,5 +229,50 @@ export default function Home() {
 
       <footer className="showcase-footer border-t border-border"><div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-7 font-mono text-[10px] text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between"><Link href="/" className="font-bold tracking-tight text-foreground">ALKORNITHM<span className="text-terminal-accent">.</span></Link><span>May the bug be with you.</span><span>© <CurrentYear /> ALKORNITHM · Built with curiosity.</span></div></footer>
     </main>
+  );
+}
+
+async function LatestBlogPost() {
+  const [post] = await getPosts(1);
+
+  if (!post) {
+    return (
+      <div className="rounded-2xl border border-dashed border-border p-6 text-sm text-muted-foreground sm:p-8">
+        No published posts yet.
+      </div>
+    );
+  }
+
+  const publishedDate = post.published_at
+    ? new Date(post.published_at).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })
+    : "Recently published";
+
+  return (
+    <article className="group rounded-2xl border border-border bg-card/80 p-6 shadow-sm shadow-black/[0.03] transition-colors hover:border-terminal-accent/50 sm:p-8">
+      <Link href={getPostPath(post)} className="block">
+        <div className="mb-4 flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+          <span className="text-terminal-accent">Latest post</span>
+          <span>·</span>
+          <time>{publishedDate}</time>
+          <span>·</span>
+          <span>{post.reading_time} min read</span>
+        </div>
+        <h3 className="text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-terminal-accent sm:text-2xl">
+          {post.title}
+        </h3>
+        {post.excerpt && (
+          <p className="mt-3 line-clamp-3 text-sm leading-7 text-muted-foreground">
+            {post.excerpt}
+          </p>
+        )}
+        <span className="mt-6 inline-flex items-center gap-2 font-mono text-xs text-terminal-accent">
+          read_article <ArrowUpRight size={14} />
+        </span>
+      </Link>
+    </article>
   );
 }
