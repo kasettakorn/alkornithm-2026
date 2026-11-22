@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Play, Sparkles, Terminal, UserRound } from "lucide-react";
 import { GithubLogo, LinkedinLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 import { CurrentYear } from "@/components/layout/current-year";
@@ -45,14 +46,16 @@ export default function Home() {
               <div className="space-y-6 p-5 font-mono text-xs leading-6 sm:p-7">
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> whoami</p><p className="mt-1 pl-4 text-base font-semibold text-foreground">Ronnakorn Hompoa</p><p className="pl-4 text-muted-foreground">Software Developer</p></div>
                 <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> cat focus.txt</p><ul className="mt-2 space-y-1 pl-4 text-muted-foreground"><li><span className="mr-2 text-terminal-accent">+</span>Full-stack engineering</li><li><span className="mr-2 text-terminal-accent">+</span>Computer vision & AI</li><li><span className="mr-2 text-terminal-accent">+</span>Building useful products</li></ul></div>
-                <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> education --list</p><div className="mt-3 space-y-3 pl-4">
-                  <div className="flex items-center gap-3">
+                <div><p className="text-muted-foreground"><span className="text-terminal-accent">❯</span> education --list</p><div className="relative ml-1 mt-3 space-y-4 border-l border-border pl-4">
+                  <div className="relative flex items-center gap-3">
+                    <span aria-hidden="true" className="absolute -left-[1.3rem] top-4 size-2 rounded-full bg-terminal-accent ring-4 ring-card" />
                     <img src="/images/logos/chula.png" alt="Chulalongkorn University mark" loading="lazy" className="size-10 shrink-0 object-contain" />
-                    <div><p><span className="text-terminal-accent">M.Sc.</span> Computer Science</p><p className="text-muted-foreground">Chulalongkorn University</p></div>
+                    <div><p><span className="text-terminal-accent">M.Sc.</span> Computer Science</p><p className="text-muted-foreground">Chulalongkorn University</p><p className="font-mono text-[10px] text-terminal-accent">2023 — 2026</p></div>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="relative flex items-center gap-3">
+                    <span aria-hidden="true" className="absolute -left-[1.3rem] top-4 size-2 rounded-full bg-terminal-accent ring-4 ring-card" />
                     <img src="/images/logos/kmutnb.png" alt="KMUTNB mark" loading="lazy" className="size-10 shrink-0 object-contain" />
-                    <div><p><span className="text-terminal-accent">B.Sc.</span> Computer Science</p><p className="text-muted-foreground">King Mongkut's University of Technology North Bangkok (KMUTNB)</p></div>
+                    <div><p><span className="text-terminal-accent">B.Sc.</span> Computer Science</p><p className="text-muted-foreground">King Mongkut's University of Technology North Bangkok (KMUTNB)</p><p className="font-mono text-[10px] text-terminal-accent">2016 — 2020</p></div>
                   </div>
                 </div></div>
                 <div className="border-t border-border pt-4 text-muted-foreground"><span className="text-terminal-accent">❯</span> keep going for Ph.D.<span className="terminal-caret inline-block h-3.5 w-1.5 translate-y-[2px] bg-terminal-accent" /></div>
@@ -94,22 +97,42 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
           <div><p className="section-kicker inline-flex items-center gap-2"><Briefcase size={13} aria-hidden="true" />03 / EXPERIENCE</p><h2 className="section-heading mt-5">The path<br />so far.</h2><p className="mt-5 max-w-xs text-sm leading-7 text-muted-foreground">The teams, projects, and opportunities that have shaped how I build software.</p></div>
           <div className="relative">
-            <div aria-hidden="true" className="absolute bottom-8 left-[19px] top-8 w-px bg-border" />
             <div className="space-y-8">
-              <article className="group relative rounded-2xl border border-border bg-card p-5 pl-16 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6 sm:pl-16">
-                <div className="absolute left-0 top-0 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/cubesofttech.png" alt="Cube SoftTech mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+              <article className="group rounded-2xl border border-border bg-card p-5 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6">
                 <div className="pb-2">
-                  <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CURRENT ROLE</span><span className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</span></div>
+                  <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><Image src="/images/logos/cubesofttech.png" alt="Cube SoftTech logo" width={429} height={91} className="h-10 w-auto object-contain " /><div className="flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</span></div></div>
                   <h3 className="text-lg font-semibold">Full Stack Developer · AIS Team</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">Cube SoftTech Co., Ltd.</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Telecom Industry</p>
+                  <ul className="mt-3 list-disc space-y-1.5 pl-4 text-sm leading-6 text-muted-foreground">
+                    <li>Developed and maintained large-scale myAIS mobile applications with Flutter for customer-facing platforms.</li>
+                    <li>Designed and implemented backend services with NestJS using scalable domain-driven patterns.</li>
+                    <li>Collaborated with product owners, QA, and DevOps teams to deliver features on schedule.</li>
+                    <li>Supported production systems through debugging, performance tuning, and incident resolution.</li>
+                  </ul>
                 </div>
               </article>
-              <article className="group relative rounded-2xl border border-border bg-card p-5 pl-16 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6 sm:pl-16">
-                <div className="absolute left-0 top-0 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/scg.png" alt="SCG mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+              <article className="group rounded-2xl border border-border bg-card p-5 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6">
                 <div className="pb-2">
-                  <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CO-OPERATIVE EDUCATION</span><span className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</span></div>
-                  <h3 className="text-lg font-semibold">SCG Chemicals Co., Ltd.</h3>
-                  <p className="mt-2 max-w-xl text-sm leading-7 text-muted-foreground">Developed a Health Surveillance Tracking System (Return to Work), recognized with a project gold medal.</p>
+                  <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><Image src="/images/logos/samart.png" alt="SAMART logo" width={160} height={30} className="h-7 w-auto object-contain dark:brightness-0 dark:invert" /><div className="flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-muted-foreground">JUL 2020 — SEP 2022</span></div></div>
+                  <h3 className="text-lg font-semibold">System Analyst / Software Engineer</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">Comtech Company Limited · Government Systems</p>
+                  <ul className="mt-3 list-disc space-y-1.5 pl-4 text-sm leading-6 text-muted-foreground">
+                    <li>Analyzed and supported national-scale information systems for the Department of Land.</li>
+                    <li>Executed data migration and validation across multiple data center sources to ensure data integrity.</li>
+                    <li>Maintained and debugged enterprise applications using JSP and C#.</li>
+                    <li>Developed React-based dashboards to improve operational reporting and system transparency.</li>
+                  </ul>
+                </div>
+              </article>
+              <article className="group rounded-2xl border border-border bg-card p-5 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6">
+                <div className="pb-2">
+                  <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><Image src="/images/logos/scg.png" alt="SCG logo" width={3889} height={1963} className="h-15 w-auto object-contain" /><div className="flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</span></div></div>
+                  <h3 className="text-lg font-semibold">Software Engineering Intern</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">SCG Chemicals Public Company Limited</p>
+                  <ul className="mt-3 list-disc space-y-1.5 pl-4 text-sm leading-6 text-muted-foreground">
+                    <li>Built a web-based HR system to track employee health checkups and return-to-work compliance.</li>
+                    <li>Awarded the Gold Medal in the Co-operative Project Contest 2020 for system quality and business impact.</li>
+                  </ul>
                 </div>
               </article>
             </div>
@@ -186,8 +209,7 @@ export default function Home() {
           <div><p className="section-kicker inline-flex items-center gap-2"><BookOpen size={13} aria-hidden="true" />06 / PUBLICATIONS</p><h2 className="section-heading mt-5">Research &amp;<br />publications.</h2></div>
           <div className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-lg shadow-black/[0.03] transition-all duration-500 hover:-translate-y-1 hover:border-terminal-accent/50 hover:shadow-xl sm:p-10"><div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 size-64 rounded-full bg-terminal-accent/5 blur-3xl transition-colors group-hover:bg-terminal-accent/10" />
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded border border-terminal-accent/30 bg-terminal-accent/10 px-2 py-1 font-mono text-[10px] text-terminal-accent">IEEE XPLORE</span>
-              <span className="font-mono text-[10px] text-muted-foreground">RESEARCH PUBLICATION</span>
+              <Image src="/images/logos/ieee-xplore.png" alt="IEEE Xplore" width={237} height={48} className="h-8 w-auto object-contain dark:brightness-0 dark:invert" />
             </div>
             <h3 className="mt-5 text-xl font-semibold leading-snug tracking-tight sm:text-2xl">Image-Based Classification of Sweet and Not-Sweet Mangoes Using a Deep Learning Model</h3>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">Research on image-based deep learning for classifying Nam Dok Mai mango sweetness. Explore the published paper and its bibliographic details on IEEE Xplore.</p>

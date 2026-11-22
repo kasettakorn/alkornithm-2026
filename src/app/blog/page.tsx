@@ -105,7 +105,7 @@ async function BlogContent() {
                                     <span>·</span>
                                     <span className="inline-flex items-center gap-1"><Clock3 size={11} /> {featuredPost.reading_time} min read</span>
                                 </div>
-                                <h3 className="mt-6 text-3xl font-semibold leading-tight tracking-[-0.04em] transition-colors group-hover:text-terminal-accent sm:text-4xl">
+                                <h3 className="mt-6 font-mono text-3xl font-semibold leading-tight tracking-[-0.04em] transition-colors group-hover:text-terminal-accent sm:text-4xl">
                                     {featuredPost.title}
                                 </h3>
                                 {featuredPost.excerpt && (
