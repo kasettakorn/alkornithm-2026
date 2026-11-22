@@ -102,7 +102,7 @@ export default function Home() {
                 <div className="pb-2">
                   <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><Image src="/images/logos/cubesofttech.png" alt="Cube SoftTech logo" width={429} height={91} className="h-10 w-auto object-contain " /><div className="flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</span></div></div>
                   <h3 className="text-lg font-semibold">Full Stack Developer · AIS Team</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">Telecom Industry</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Cube SoftTech Company Limited</p>
                   <ul className="mt-3 list-disc space-y-1.5 pl-4 text-sm leading-6 text-muted-foreground">
                     <li>Developed and maintained large-scale myAIS mobile applications with Flutter for customer-facing platforms.</li>
                     <li>Designed and implemented backend services with NestJS using scalable domain-driven patterns.</li>
@@ -115,7 +115,7 @@ export default function Home() {
                 <div className="pb-2">
                   <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><Image src="/images/logos/samart.png" alt="SAMART logo" width={160} height={30} className="h-7 w-auto object-contain dark:brightness-0 dark:invert" /><div className="flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-muted-foreground">JUL 2020 — SEP 2022</span></div></div>
                   <h3 className="text-lg font-semibold">System Analyst / Software Engineer</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">Comtech Company Limited · Government Systems</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Samart Comtech Company Limited</p>
                   <ul className="mt-3 list-disc space-y-1.5 pl-4 text-sm leading-6 text-muted-foreground">
                     <li>Analyzed and supported national-scale information systems for the Department of Land.</li>
                     <li>Executed data migration and validation across multiple data center sources to ensure data integrity.</li>
