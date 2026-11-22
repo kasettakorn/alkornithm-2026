@@ -11,13 +11,13 @@ type SiteHeaderProps = {
 };
 
 const navigation = [
-  { label: "About", homeHref: "#about", blogHref: "/#about" },
-  { label: "Work", homeHref: "#projects", blogHref: "/#projects" },
-  { label: "Experience", homeHref: "#experience", blogHref: "/#experience" },
-  { label: "YouTube", homeHref: "#youtube", blogHref: "/#youtube" },
-  { label: "Writing", homeHref: "/blog", blogHref: "/blog" },
-  { label: "Publications", homeHref: "#publications", blogHref: "/#publications" },
-  { label: "Contact", homeHref: "#contact", blogHref: "/#contact" },
+  { label: "About", homeHref: "#about", blogHref: "/#about", sectionId: "about" },
+  { label: "Work", homeHref: "#projects", blogHref: "/#projects", sectionId: "projects" },
+  { label: "Experience", homeHref: "#experience", blogHref: "/#experience", sectionId: "experience" },
+  { label: "YouTube", homeHref: "#youtube", blogHref: "/#youtube", sectionId: "youtube" },
+  { label: "Writing", homeHref: "/blog", blogHref: "/blog", sectionId: "writing" },
+  { label: "Publications", homeHref: "#publications", blogHref: "/#publications", sectionId: "publications" },
+  { label: "Contact", homeHref: "#contact", blogHref: "/#contact", sectionId: "contact" },
 ];
 
 export function SiteHeader({ currentPage }: SiteHeaderProps) {
@@ -31,10 +31,36 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
       return;
     }
 
-    const selectedSection = navigation.find(
-      (item) => item.homeHref === window.location.hash,
-    );
-    setSelectedMenu(selectedSection?.label ?? null);
+    const updateActiveSection = () => {
+      const activationOffset =
+        (document.querySelector("header")?.getBoundingClientRect().height ?? 0) +
+        16;
+      const activeSection = [...navigation].reverse().find((item) => {
+        const section = document.getElementById(item.sectionId);
+        return section && section.getBoundingClientRect().top <= activationOffset;
+      });
+
+      setSelectedMenu(activeSection?.label ?? null);
+    };
+
+    let frameId: number | null = null;
+    const handleScroll = () => {
+      if (frameId !== null) return;
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+        updateActiveSection();
+      });
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+    };
   }, [currentPage]);
 
   return (
