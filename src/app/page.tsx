@@ -123,7 +123,7 @@ export default function Home() {
             <div aria-hidden="true" className="absolute bottom-8 left-[19px] top-8 w-px bg-border" />
             <div className="space-y-8">
               <article className="group relative rounded-2xl border border-border bg-card p-5 pl-16 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6 sm:pl-16">
-                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/cubesofttech.png" alt="Cube SoftTech mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+                <div className="absolute left-0 top-0 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/cubesofttech.png" alt="Cube SoftTech mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
                 <div className="pb-2">
                   <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CURRENT ROLE</span><span className="font-mono text-[10px] text-muted-foreground">OCT 2022 — PRESENT</span></div>
                   <h3 className="text-lg font-semibold">Full Stack Developer · AIS Team</h3>
@@ -131,7 +131,7 @@ export default function Home() {
                 </div>
               </article>
               <article className="group relative rounded-2xl border border-border bg-card p-5 pl-16 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-terminal-accent/40 sm:p-6 sm:pl-16">
-                <div className="absolute left-0 top-1 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/scg.png" alt="SCG mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
+                <div className="absolute left-0 top-0 z-10 flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-white p-1"><img src="/images/logos/scg.png" alt="SCG mark" loading="lazy" className="max-h-full max-w-full object-contain" /></div>
                 <div className="pb-2">
                   <div className="mb-3 flex flex-wrap items-center gap-3"><span className="font-mono text-[10px] text-terminal-accent">CO-OPERATIVE EDUCATION</span><span className="font-mono text-[10px] text-muted-foreground">MAY — NOV 2019</span></div>
                   <h3 className="text-lg font-semibold">SCG Chemicals Co., Ltd.</h3>
