@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "static.ghost.org",
       },
+      {
+        protocol: "https",
+        hostname: "storage.ghost.io",
+        pathname: "/c/**",
+      },
     ],
   },
 };

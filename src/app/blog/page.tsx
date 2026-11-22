@@ -2,10 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight, Clock3, Terminal } from "lucide-react";
-import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
-import { getPosts } from "@/lib/ghost-post";
+import { SiteHeader } from "@/components/layout/navbar";
+import { getPostPath, getPosts } from "@/lib/ghost-post";
 
 export const metadata = {
     title: "Writing",
@@ -21,43 +20,10 @@ function formatDate(date?: string | null, month: "short" | "long" = "short") {
     });
 }
 
-function SiteHeader() {
-    return (
-        <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-xl">
-            <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4 sm:px-8 md:flex-row md:items-center md:justify-between">
-                <div className="flex items-center justify-between gap-4">
-                    <Link href="/" className="font-mono text-lg font-bold tracking-tight">
-                        ALKORNITHM<span className="text-terminal-accent">.</span>
-                    </Link>
-                    <div className="flex items-center gap-3 md:hidden">
-                        <ThemeToggle />
-                        <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="inline-flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-terminal-accent hover:text-terminal-accent">
-                            <GithubLogo size={16} />
-                        </a>
-                    </div>
-                </div>
-                <nav aria-label="Main navigation" className="flex items-center gap-5 overflow-x-auto pb-1 font-mono text-[11px] text-muted-foreground md:pb-0">
-                    <Link href="/#about" className="shrink-0 transition-colors hover:text-terminal-accent"><span className="mr-1 text-terminal-accent/70">01.</span>About</Link>
-                    <Link href="/#projects" className="shrink-0 transition-colors hover:text-terminal-accent"><span className="mr-1 text-terminal-accent/70">02.</span>Work</Link>
-                    <Link href="/#experience" className="shrink-0 transition-colors hover:text-terminal-accent"><span className="mr-1 text-terminal-accent/70">03.</span>Experience</Link>
-                    <Link href="/blog" aria-current="page" className="shrink-0 text-terminal-accent"><span className="mr-1">04.</span>Writing</Link>
-                    <Link href="/#contact" className="shrink-0 transition-colors hover:text-terminal-accent"><span className="mr-1 text-terminal-accent/70">05.</span>Contact</Link>
-                </nav>
-                <div className="hidden items-center gap-3 md:flex">
-                    <ThemeToggle />
-                    <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent">
-                        <GithubLogo size={14} /> GitHub <ArrowUpRight size={13} />
-                    </a>
-                </div>
-            </div>
-        </header>
-    );
-}
-
 export default function BlogPage() {
     return (
         <main className="min-h-screen bg-background text-foreground">
-            <SiteHeader />
+            <SiteHeader currentPage="blog" />
             <Suspense
                 fallback={
                     <div className="mx-auto min-h-[60vh] max-w-6xl px-5 py-24 sm:px-8">
@@ -114,7 +80,7 @@ async function BlogContent() {
 
                 {featuredPost ? (
                     <article className="group overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-terminal-accent/50">
-                        <Link href={`/blog/${featuredPost.slug}`} className="grid lg:grid-cols-[1.1fr_0.9fr]">
+                        <Link href={getPostPath(featuredPost)} className="grid lg:grid-cols-[1.1fr_0.9fr]">
                             {featuredPost.feature_image ? (
                                 <div className="relative aspect-[16/10] overflow-hidden bg-muted lg:aspect-auto lg:min-h-[390px]">
                                     <Image
@@ -182,7 +148,7 @@ async function BlogContent() {
                         <div className="divide-y divide-border border-y border-border">
                             {archivePosts.map((post, index) => (
                                 <article key={post.id} className="group">
-                                    <Link href={`/blog/${post.slug}`} className="grid gap-4 py-7 transition-colors sm:grid-cols-[64px_1fr_auto] sm:items-center sm:gap-7">
+                                    <Link href={getPostPath(post)} className="grid gap-4 py-7 transition-colors sm:grid-cols-[64px_1fr_auto] sm:items-center sm:gap-7">
                                         <span className="font-mono text-xs text-terminal-accent">/{String(index + 2).padStart(2, "0")}</span>
                                         <div>
                                             <div className="mb-2 flex flex-wrap items-center gap-3 font-mono text-[10px] text-muted-foreground">

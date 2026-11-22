@@ -162,6 +162,128 @@
   animation: terminal-blink 1.1s steps(2, start) infinite;
 }
 
+.ghost-content {
+  color: var(--foreground);
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.ghost-content > :first-child {
+  margin-top: 0;
+}
+
+.ghost-content :is(p, ul, ol, blockquote, pre, figure, table) {
+  margin-block: 1.5em;
+}
+
+.ghost-content :is(h1, h2, h3, h4) {
+  margin-block: 2em 0.7em;
+  color: var(--foreground);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.ghost-content h1 {
+  font-size: 2.25rem;
+}
+
+.ghost-content h2 {
+  font-size: 1.875rem;
+}
+
+.ghost-content h3 {
+  font-size: 1.5rem;
+}
+
+.ghost-content h4 {
+  font-size: 1.25rem;
+}
+
+.ghost-content a {
+  color: var(--terminal-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklch, var(--terminal-accent) 45%, transparent);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 150ms ease;
+}
+
+.ghost-content a:hover {
+  text-decoration-color: currentColor;
+}
+
+.ghost-content :is(ul, ol) {
+  padding-inline-start: 1.5em;
+}
+
+.ghost-content ul {
+  list-style: disc;
+}
+
+.ghost-content ol {
+  list-style: decimal;
+}
+
+.ghost-content li {
+  padding-inline-start: 0.35em;
+}
+
+.ghost-content li + li {
+  margin-top: 0.4em;
+}
+
+.ghost-content blockquote {
+  border-inline-start: 3px solid var(--terminal-accent);
+  padding: 0.25em 0 0.25em 1.25em;
+  color: var(--muted-foreground);
+}
+
+.ghost-content :not(pre) > code {
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  background: var(--muted);
+  padding: 0.15em 0.4em;
+  font-size: 0.88em;
+}
+
+.ghost-content pre {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--muted);
+  padding: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.ghost-content pre code {
+  font-size: inherit;
+}
+
+.ghost-content :is(img, video, iframe) {
+  max-width: 100%;
+  border-radius: 0.75rem;
+}
+
+.ghost-content figure {
+  margin-inline: 0;
+}
+
+.ghost-content figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.ghost-content hr {
+  margin-block: 3em;
+  border-color: var(--border);
+}
+
 @keyframes terminal-blink {
   to {
     visibility: hidden;

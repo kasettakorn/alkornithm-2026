@@ -1,18 +1,9 @@
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, BookOpen, Briefcase, Code2, Cpu, FolderKanban, Mail, MapPin, NotebookPen, Play, Sparkles, Terminal, UserRound } from "lucide-react";
 import { GithubLogo, LinkedinLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { CurrentYear } from "@/components/layout/current-year";
+import { SiteHeader } from "@/components/layout/navbar";
 
-const navigation = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "YouTube", href: "#youtube" },
-  { label: "Writing", href: "/blog" },
-  { label: "Publications", href: "#publications" },
-  { label: "Contact", href: "#contact" },
-];
 const skills = [
   { name: "TypeScript", logo: "typescript" },
   { name: "JavaScript", logo: "javascript" },
@@ -31,25 +22,8 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-background text-foreground selection:bg-terminal-accent/20">
-      <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 shadow-sm shadow-black/[0.02] backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4 sm:px-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center justify-between gap-4">
-            <Link href="/" className="font-mono text-lg font-bold tracking-tight">ALKORNITHM<span className="text-terminal-accent">.</span></Link>
-            <div className="flex items-center gap-3 md:hidden">
-              <ThemeToggle />
-              <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="inline-flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground hover:border-terminal-accent hover:text-terminal-accent"><GithubLogo size={16} /></a>
-            </div>
-          </div>
-          <nav aria-label="Main navigation" className="flex items-center gap-5 overflow-x-auto pb-1 font-mono text-[11px] text-muted-foreground md:pb-0">
-            {navigation.map((item, index) => <Link key={item.label} href={item.href} className="shrink-0 transition-colors hover:text-terminal-accent"><span className="mr-1 text-terminal-accent/70">0{index + 1}.</span>{item.label}</Link>)}
-          </nav>
-          <div className="hidden items-center gap-3 md:flex">
-            <ThemeToggle />
-            <a href="https://github.com/kasettakorn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 font-mono text-xs transition-colors hover:border-terminal-accent hover:text-terminal-accent"><GithubLogo size={14} /> GitHub <ArrowUpRight size={13} /></a>
-          </div>
-        </div>
-      </header>
+    <main className="min-h-screen overflow-x-clip bg-background text-foreground selection:bg-terminal-accent/20">
+      <SiteHeader currentPage="home" />
 
       <section className="showcase-section terminal-grid relative isolate border-b border-border">
         <div className="mx-auto grid min-h-[calc(90vh-76px)] max-w-6xl items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-28">
